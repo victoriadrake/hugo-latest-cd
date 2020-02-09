@@ -1,0 +1,9 @@
+name: 'Build & Deploy with Latest Hugo'
+description: '🚀 Build and deploy a Hugo site to GitHub Pages using latest extended Hugo.'
+author: 'victoriadrake'
+branding:
+  icon: 'arrow-up-circle'  
+  color: 'blue'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
