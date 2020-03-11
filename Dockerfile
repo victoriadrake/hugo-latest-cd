@@ -2,8 +2,7 @@
 FROM node:12
 
 RUN apt update && apt install -y \
-    curl git jq \
-    npm install postcss-cli autoprefixer
+    curl git jq
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY action.sh /action.sh
