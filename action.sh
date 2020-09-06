@@ -16,12 +16,12 @@ cd ${GITHUB_WORKSPACE}
 hugo version || exit 1
 
 echo '🧹 Clean site'
-if [ -d "docs" ]; then
-    rm -rf docs/*
+if [ -d "${DEST:-"docs"}" ]; then
+    rm -rf ${DEST:-"docs"}/*
 fi
 
 echo '🍳 Build site'
-hugo -d docs
+hugo ${HUGO_ARGS:-""} -d ${DEST:-"docs"}
 
 echo '🚀 Deploy build'
 git config user.name "${GITHUB_ACTOR}"
