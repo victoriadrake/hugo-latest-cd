@@ -16,7 +16,7 @@ jobs:
         with:
           fetch-depth: 1
       - name: 🔨 Set up Node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@master
         with:
           node-version: 14.x
       - name: 🔧 Install tools
