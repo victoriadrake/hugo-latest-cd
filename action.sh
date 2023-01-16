@@ -7,7 +7,7 @@ echo '🔧 Install tools'
 npm init -y && npm install -y postcss-cli autoprefixer
 
 echo '🤵 Install Hugo'
-HUGO_VERSION=$(curl -s https://api.github.com/repos/gohugoio/hugo/releases/latest | jq -r '.tag_name')
+HUGO_VERSION='v0.109.0'
 mkdir tmp/ && cd tmp/
 curl -sSL https://github.com/gohugoio/hugo/releases/download/${HUGO_VERSION}/hugo_extended_${HUGO_VERSION: -7}_Linux-64bit.tar.gz | tar -xvzf-
 mv hugo /usr/local/bin/
