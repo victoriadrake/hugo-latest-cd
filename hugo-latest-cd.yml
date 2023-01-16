@@ -12,11 +12,11 @@ jobs:
 
     steps:
       - name: 🛎 Check out master
-        uses: actions/checkout@master
+        uses: actions/checkout@main
         with:
           fetch-depth: 1
       - name: 🔨 Set up Node
-        uses: actions/setup-node@master
+        uses: actions/setup-node@main
         with:
           node-version: 14.x
       - name: 🔧 Install tools
