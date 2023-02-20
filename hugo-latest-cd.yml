@@ -12,13 +12,13 @@ jobs:
 
     steps:
       - name: 🛎 Check out master
-        uses: actions/checkout@master
+        uses: actions/checkout@main
         with:
           fetch-depth: 1
       - name: 🔨 Set up Node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@main
         with:
-          node-version: 12.x
+          node-version: 14.x
       - name: 🔧 Install tools
         run: |
           sudo apt install curl jq
@@ -27,7 +27,7 @@ jobs:
         run: |
           HUGO_VERSION=$(curl -s https://api.github.com/repos/gohugoio/hugo/releases/latest | jq -r '.tag_name')
           mkdir tmp/ && cd tmp/
-          curl -sSL https://github.com/gohugoio/hugo/releases/download/${HUGO_VERSION}/hugo_extended_${HUGO_VERSION: -6}_Linux-64bit.tar.gz | tar -xvzf-
+          curl -sSL https://github.com/gohugoio/hugo/releases/download/${HUGO_VERSION}/hugo_extended_${HUGO_VERSION: -7}_Linux-64bit.tar.gz | tar -xvzf-
           sudo mv hugo /usr/local/bin/
           cd .. && rm -rf tmp/
           hugo version
